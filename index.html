@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Crud Operation Using Javascript</h1>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+
+                     <div>
+                        <label>Student ID*</label><label class="validation-error hide" id="studentNameValidationError">This field is required.</label>
+                        <input type="text" name="studentId" id="studentId">
+                    </div>
+
+                    <div>
+                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    
+
+                    <div>
+                        <label>Stream</label>
+                        <input type="text" name="stream" id="stream">
+                    </div>
+                    <div>
+                        <label>Percentage</label>
+                        <input type="number" name="percentage" id="percentage">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input class="btn" type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+            <div>
+                <select class="form-select" aria-label="Default select example" id="search">
+                  <option selected>Select By Which u want to search </option>
+                  <option value="0">Id</option>
+                  <option value="1">Name</option>
+                  <option value="2">Stream</option>
+                  <option value="3">Percentage</option>
+                </select>
+                <input type="text"  id="myInput" onkeyup="search()"   placeholder="Search....." title="Type in a name">
+            </div> 
+                <div></div>
+
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Stream</th>
+                            <th>Percentage</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
